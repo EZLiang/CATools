@@ -24,8 +24,8 @@ def parse(string):
   st = []
   for i in s:
     if not (i == ""):
-      n = i.pop(0)
       t = list(i)
+      n = t.pop(0)
       if t == []:
         for j in transitions:
           if j[0] == n:
@@ -37,7 +37,7 @@ def parse(string):
           if j[0] == n:
             ts.append(j[1])
         for j in ts:
-          if not (i in t):
+          if not (j in t):
             st.append(f"{n}{j}")
       else:
         for j in transitions:
@@ -47,6 +47,8 @@ def parse(string):
 
 
 def istotalistic(string):
+  if string == "":
+    return True
   try:
     int(string)
     return True

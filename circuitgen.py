@@ -6,8 +6,9 @@ def mix(n, s1, s2, c1, c2):
   return int((c1 * i) + (c2 * (1 - i)))
 
 
-def nonisotrop_generate(b, s, c):
+def nontot_generate(b, s, c):
   result = ""
+  c = int(c)
   result += f"""@RULE Wire_B{b.replace("-", "_")}_S{s.replace("-", "_")}_C{c}\n\n@TABLE\nn_states: {c + 1}\nneighborhood: Moore\nsymmetries: rotate4reflect\n\n"""
   var_dead = "0,1"
   for i in range(3, c + 1):
@@ -47,8 +48,9 @@ def nonisotrop_generate(b, s, c):
   return result
 
 
-def isotrop_generate(b, s, c):
+def tot_generate(b, s, c):
   result = ""
+  c = int(c)
   result += f"""@RULE Wire_B{b.replace("-", "_")}_S{s.replace("-", "_")}_C{c}\n\n@TABLE\nn_states: {c + 1}\nneighborhood: Moore\nsymmetries: permute\n\n"""
   var_dead = "0,1"
   for i in range(3, c + 1):
@@ -85,8 +87,8 @@ def isotrop_generate(b, s, c):
 
 
 def main(string):
-  b, s, c = string.split("/")
+  s, b, c = string.split("/")
   if CA.istotalistic(b) and CA.istotalistic(s):
-    return isotrop_generate(b, s, c)
+    return tot_generate(b, s, c)
   else:
-    return nonisotrop_generate(b, s, c)
+    return nontot_generate(b, s, c)
