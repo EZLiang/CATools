@@ -1,6 +1,5 @@
 import sys
-import circuitgen, tablegen
-
+from scripts import circuitgen, tablegen
 
 processes = {
   "circuit": circuitgen.main,

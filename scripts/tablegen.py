@@ -1,4 +1,4 @@
-import CA
+from scripts import CA
 
 
 def mix(n, s1, s2, c1, c2):
