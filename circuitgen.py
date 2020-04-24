@@ -78,7 +78,7 @@ def tot_generate(b, s, c):
   for i in range(3, c):
     result += f"{i},any.0,any.1,any.2,any.3,any.4,any.5,any.6,any.7,{i + 1}\n"
   result += f"\n@COLORS\n0 48 48 48\n"
-  result += "1 0 128 255\n"
+  result += "1 255 128 0\n"
   for i in range(2, c + 1):
     result += f"{i} {mix(i, c + 1, 2, 0, 255)} {mix(i, c + 1, 2, 128, 255)} {255}\n"
   return result

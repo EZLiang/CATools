@@ -40,7 +40,7 @@ def nontot_generations_generate(b, s, c):
   result += f"{c - 1},any.0,any.1,any.2,any.3,any.4,any.5,any.6,any.7,0\n"
   for i in range(2, c - 1):
     result += f"{i},any.0,any.1,any.2,any.3,any.4,any.5,any.6,any.7,{i + 1}\n"
-  result += f"\n@COLORS\n0 0 0 0\n"
+  result += f"\n@COLORS\n0 48 48 48\n"
   for i in range(1, c):
     result += f"{i} {mix(i, c, 1, 0, 255)} {mix(i, c, 1, 255, 0)} 0\n"
   return result
@@ -76,7 +76,7 @@ def tot_generations_generate(b, s, c):
   result += f"{c - 1},any.0,any.1,any.2,any.3,any.4,any.5,any.6,any.7,0\n"
   for i in range(2, c - 1):
     result += f"{i},any.0,any.1,any.2,any.3,any.4,any.5,any.6,any.7,{i + 1}\n"
-  result += f"\n@COLORS\n0 0 0 0\n"
+  result += f"\n@COLORS\n48 48 48 48\n"
   for i in range(1, c):
     result += f"{i} {mix(i, c, 1, 0, 255)} {mix(i, c, 1, 255, 0)} 0\n"
   return result
@@ -96,7 +96,7 @@ def nontot_hensel_generate(b, s):
     t = list(CA.transitions[i])
     result += "1,{},1\n".format(",".join(t))
   result += "1,any.0,any.1,any.2,any.3,any.4,any.5,any.6,any.7,0\n"
-  result += f"\n@COLORS\n0 0 0 0\n1 255 255 255\n"
+  result += f"\n@COLORS\n48 48 48 48\n1 255 255 255\n"
   return result
 
 
@@ -120,7 +120,7 @@ def tot_hensel_generate(b, s):
       result += "0,"
     result += "1\n"
   result += "1,any.0,any.1,any.2,any.3,any.4,any.5,any.6,any.7,0\n"
-  result += f"\n@COLORS\n0 0 0 0\n1 255 255 255\n"
+  result += f"\n@COLORS\n48 48 48 48\n1 255 255 255\n"
   return result
 
 
