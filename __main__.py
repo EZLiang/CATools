@@ -1,9 +1,10 @@
 import sys
-import circuitgen
+import circuitgen, tablegen
 
 
 processes = {
-  "circuitgen": circuitgen.main
+  "circuit": circuitgen.main,
+  "toruletable": tablegen.main
 }
 
 

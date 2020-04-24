@@ -7,9 +7,8 @@ def mix(n, s1, s2, c1, c2):
 
 
 def nontot_generate(b, s, c):
-  result = ""
   c = int(c)
-  result += f"""@RULE Wire_B{b.replace("-", "_")}_S{s.replace("-", "_")}_C{c}\n\n@TABLE\nn_states: {c + 1}\nneighborhood: Moore\nsymmetries: rotate4reflect\n\n"""
+  result = f"""@RULE Wire_B{b.replace("-", "_")}_S{s.replace("-", "_")}_C{c}\n\n@TABLE\nn_states: {c + 1}\nneighborhood: Moore\nsymmetries: rotate4reflect\n\n"""
   var_dead = "0,1"
   for i in range(3, c + 1):
     var_dead += ","
@@ -49,9 +48,8 @@ def nontot_generate(b, s, c):
 
 
 def tot_generate(b, s, c):
-  result = ""
   c = int(c)
-  result += f"""@RULE Wire_B{b.replace("-", "_")}_S{s.replace("-", "_")}_C{c}\n\n@TABLE\nn_states: {c + 1}\nneighborhood: Moore\nsymmetries: permute\n\n"""
+  result = f"""@RULE Wire_B{b.replace("-", "_")}_S{s.replace("-", "_")}_C{c}\n\n@TABLE\nn_states: {c + 1}\nneighborhood: Moore\nsymmetries: permute\n\n"""
   var_dead = "0,1"
   for i in range(3, c + 1):
     var_dead += ","
